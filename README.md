@@ -4,9 +4,7 @@
 
 TwiNSYNC is a context-enhanced digital twin system that simulates how *you* would answer interview questions — using your experience, tone, and content pulled in real time from multiple sources. It's powered by Model Context Protocol (MCP) principles to dynamically fetch and inject relevant context into every response.
 
----
-
-## What is TwiNSYNC?
+### What is TwiNSYNC?
 
 TwiNSYNC assists in interview preparation by creating an intelligent representation of yourself. It functions as a digital model that understands your experience, communicates in your voice, and reflects your tone and style.
 
@@ -14,9 +12,7 @@ This system learns from your previous work, writing, and projects. When presente
 
 It integrates real-time information (such as your LinkedIn posts or YouTube presentations) with your resume and history to help you respond to challenging questions naturally and authentically, effectively coaching you through the interview process.
 
----
-
-## System Overview
+### System Overview
 
 ```
 User Query
@@ -38,9 +34,7 @@ User Query
 [6] Output Display + Trace (sources used, feedback, rating)
 ```
 
----
-
-## Tech Stack
+### Tech Stack
 
 | Component | Tech |
 |----------|------|
@@ -51,9 +45,7 @@ User Query
 | Optional UI | Streamlit, Gradio, or CLI |
 | Agent Layer | LangGraph (optional) |
 
----
-
-## Project Structure
+### Project Structure
 
 ```
 twinsync/
@@ -74,38 +66,36 @@ twinsync/
 │       └── ask.py             # Endpoint: /ask
 ```
 
+### Build Plan (MVP Phases)
 
-## Build Plan (MVP Phases)
-
-### Phase 1: Core Prompt System
+#### Phase 1: Core Prompt System
 - [ ] Define `twin_persona.yaml` (your static identity)
 - [ ] Build one prompt template (e.g. STAR-based behavioral)
 - [ ] Add basic query classifier (`technical`, `behavioral`, etc.)
 - [ ] Create `ask` endpoint with FastAPI
 
-### Phase 2: MCP Context Fetchers
+#### Phase 2: MCP Context Fetchers
 - [ ] Build `mcp.linkedin.py`: scrape/post fetcher
 - [ ] Build `mcp.x.py`: grab latest tweets from your account
 - [ ] Build `mcp.youtube.py`: transcript fetch from known talks
 - [ ] Integrate `memory_db.py` (simple JSON or Chroma)
 
-### Phase 3: Prompt Composer
+#### Phase 3: Prompt Composer
 - [ ] Assemble dynamic context based on intent + query
 - [ ] Inject all context into selected prompt template
 - [ ] Final call to LLM + return formatted response
 
-### Phase 4: Output + Evaluation
+#### Phase 4: Output + Evaluation
 - [ ] Show Twin’s response
 - [ ] Include trace: source list, memory used, context injected
 - [ ] Add optional evaluator to rate the twin's answer
 
-### Stretch Goals
+#### Stretch Goals
 - [ ] UI via Streamlit or Gradio
 - [ ] Feedback loop: train twin via corrected answers
 - [ ] Use LangGraph/CrewAI for advanced behavior simulation
 
-
-## Example Prompt Template
+### Example Prompt Template
 
 ```yaml
 persona:
@@ -130,14 +120,12 @@ prompt_template: |
   Answer clearly and in your own voice.
 ```
 
-
-## Credits & Naming
+### Credits & Naming
 
 Project Name: **TwiNSYNC™**  
 > A context-aware MCP system that keeps your digital twin in sync with everything *you* are.
 
-
-## Next Step
+### Next Step
 
 To start the server:
 ```bash
@@ -148,4 +136,3 @@ To test with a mock question:
 ```bash
 curl -X POST http://localhost:8000/ask -d '{"query": "Tell me about a time you led a design team."}'
 ```
-
