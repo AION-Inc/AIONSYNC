@@ -127,7 +127,8 @@ prompt_template: |
 
 AIONSYNC is built by the core AION team.  
 Primary maintainers:
-- Zubin Ravi John ([@zubinjohn](https://github.com/zubinjohn)) – Founder, System Architect
+- ajay
+- [valiantone](https://github.com/valiantone)
 
 For technical questions, bug reports, or feature requests, feel free to open an issue or pull request.
 
