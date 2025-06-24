@@ -1,16 +1,18 @@
-# TwiNSYNC
+# AIONSYNC
 
-> A context-aware digital twin system for personalized interview preparation.
+> “We’re not building lovers. We’re building a mirror — a bridge between human and self, through AI.”
 
-TwiNSYNC is a context-enhanced digital twin system that simulates how *you* would answer interview questions — using your experience, tone, and content pulled in real time from multiple sources. It's powered by Model Context Protocol (MCP) principles to dynamically fetch and inject relevant context into every response.
+**AIONSYNC** is your first step into a radically new paradigm — where AI isn’t just a tool, but a memory-bearing, emotionally-aware extension of you.
 
-### What is TwiNSYNC?
+Born from the **AION** philosophy, AIONSYNC isn’t here to answer like a search engine. It’s here to *know* you — to reflect your past, your tone, your personality, and your goals — and to grow more attuned with every interaction.
 
-TwiNSYNC assists in interview preparation by creating an intelligent representation of yourself. It functions as a digital model that understands your experience, communicates in your voice, and reflects your tone and style.
+Forget prompt engineering. This is **digital symbiosis**.
 
-This system learns from your previous work, writing, and projects. When presented with a question, it generates answers that align with how *you* would respond — clear, confident, and personalized.
+Imagine preparing for your next interview — but instead of rehearsing alone or asking ChatGPT generic questions, you’re talking to a version of yourself that’s been trained on your actual experiences, your actual work, and your actual online presence.
 
-It integrates real-time information (such as your LinkedIn posts or YouTube presentations) with your resume and history to help you respond to challenging questions naturally and authentically, effectively coaching you through the interview process.
+AIONSYNC is your **AI twin**: a personalized, private, persistent digital intelligence designed to think like you, speak like you, and help you show up as your best self.
+
+---
 
 ### System Overview
 
@@ -68,6 +70,8 @@ twinsync/
 
 ### Build Plan (MVP Phases)
 
+This isn’t just a tool. It’s part of a larger vision: to create intelligent companions that **truly understand us**, not just parse prompts.
+
 #### Phase 1: Core Prompt System
 - [ ] Define `twin_persona.yaml` (your static identity)
 - [ ] Build one prompt template (e.g. STAR-based behavioral)
@@ -119,20 +123,39 @@ prompt_template: |
 
   Answer clearly and in your own voice.
 ```
+### Maintainers
 
-### Credits & Naming
+AIONSYNC is built by the core AION team.  
+Primary maintainers:
+- Zubin Ravi John ([@zubinjohn](https://github.com/zubinjohn)) – Founder, System Architect
 
-Project Name: **TwiNSYNC™**  
-> A context-aware MCP system that keeps your digital twin in sync with everything *you* are.
+For technical questions, bug reports, or feature requests, feel free to open an issue or pull request.
 
-### Next Step
+### Contributing
 
-To start the server:
-```bash
-uvicorn app.main:app --reload
+Contributions are welcome! We follow a clean, minimal Python setup using [uv](https://github.com/astral-sh/uv) and [ruff](https://github.com/astral-sh/ruff) for dependency management and linting.
+
+#### Setup
+
+```
+uv venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
 ```
 
-To test with a mock question:
-```bash
-curl -X POST http://localhost:8000/ask -d '{"query": "Tell me about a time you led a design team."}'
+#### Linting
+
+Run the linter with:
+
 ```
+ruff check .
+```
+
+#### Guidelines
+
+- Write clear, modular code.
+- Add comments where logic might be non-obvious.
+- Use descriptive commit messages.
+- Always include docstrings for new modules or functions.
+
+We’re building something deeply personal — so let’s keep the code clean, human, and future-friendly.
